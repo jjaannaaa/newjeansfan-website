@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>NEWJEANS</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    </head>
+    <body>
+        
+        
+        <div class="banner">
+            <div class="navbar">
+                <ul>
+                    <li><a href="#">Hanni</a></li>
+                    <li><a href="#">Minji</a></li>
+                    <li><a href="#">Danielle</a></li>
+                    <li><a href="#">Haerin</a></li>
+                    <li><a href="#">Hyein</a></li>
+                </ul>
+               
+            </div>
+
+            <div class="content">
+                <h1>NEWJEANS</h1>
+                <P>Listen to the latest Album <br>Get Up</P>
+
+                <div>
+                    <a href="https://youtu.be/jOTfBlKSQYY" target="_blank">  <button type="button"><span></span>'ETA' Official MV</button></a>
+                    <a href="https://open.spotify.com/album/4N1fROq2oeyLGAlQ1C1j18?si=82Udu6WyT3Gg_qCS-FlEEg" target="_blank"><button type="button"><span></span>'Get Up' Album</button></a>
+                    
+                </div>
+            </div>
+            <div class="hero">
+                <div class="music">
+                    <p>Newjeans</p>
+                    <h1>Get Up (instruments)</h1>
+                    <div class="track">
+                        <img src="pause1.png" id="playBtn">
+                        <div id="waveform"></div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <script>
+            var playBtn = document.getElementById("playBtn");
+
+            const wavesurfer = WaveSurfer.create({
+                container: '#waveform',
+                waveColor: 'rgb(222, 215, 250)',
+                progressColor: '#4f6ee0',
+                url: '/getup1.mp3',
+                barWidth:2,
+                responsive: true,
+                height: 100,
+                barRadius:4
+              });
+
+            playBtn.onclick = function(){
+                wavesurfer.playPause();
+                if(playBtn.src.includes("pause1.png")){
+                    playBtn.src = "pause1.png";
+                }else{
+                    playBtn.src = "pause1.png";
+                }
+            }
+            wavesurfer.on('finish',function(){
+                playBtn.src = "pause1.png";
+                wavesurfer.stop();
+            })
+
+        </script>
+       
+
+
+
+    </body>
+</html>
