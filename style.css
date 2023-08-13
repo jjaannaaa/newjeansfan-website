@@ -158,4 +158,17 @@ button:hover{
         margin:0 7px;
         position:relative;
     }
+    button{
+        width: 250px;
+        padding: 15px 0;
+        text-align: center;
+        margin: 20px 10px ;
+        border-radius: 30px;
+        font-weight: bold;
+        border: 2px solid #4f6ee0;
+        background:transparent;
+        color: #fff;
+        cursor: pointer;
+    }
+    
 }

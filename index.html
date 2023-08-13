@@ -44,7 +44,7 @@
             </div>
         </div>
         <script>
-            import WaveSurfer from 'wavesurfer.js';
+            
             var playBtn = document.getElementById("playBtn");
 
             const wavesurfer = WaveSurfer.create({
@@ -58,6 +58,10 @@
                 barRadius:4
               });
 
+              var song = 'getup1.mp3'
+              wavesurfer.load(song);
+              wavesurfer.on('ready', function () {wavesurfer.play();})
+
             playBtn.onclick = function(){
                 wavesurfer.playPause();
                 if(playBtn.src.includes("pause1.png")){
@@ -69,7 +73,7 @@
             wavesurfer.on('finish',function(){
                 playBtn.src = "pause1.png";
                 wavesurfer.stop();
-            })
+            });
 
         </script>
        
